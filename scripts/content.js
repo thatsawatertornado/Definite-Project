@@ -23,16 +23,20 @@ async function doSomething() {
 }
 doSomething();
 
+// EVENT LISTENER
 youtubeLogo = document.getElementById("logo-icon");
 youtubeLogo.addEventListener("click", () => {
   window.location = "https://www.youtube.com/";
 });
 
+// MESSAGE RECEIVER
 chrome.runtime.onMessage.addListener(gotMessage);
 
+// GET THE "TEXT" ELEMENT FROM "MESSAGE"
 function gotMessage(message, sender, sendResponse) {
   performAction(message.text);
 }
+
 
 async function performAction(message) {
   if (message === "hideRecommendedVideos") {
