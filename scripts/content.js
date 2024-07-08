@@ -12,7 +12,8 @@ let item,
   shorts,
   commentSection,
   liveChat,
-  ad;
+  ad,
+  counter = 0;
 async function doSomething() {
   item = await chrome.storage.sync.get(["homeFeed"]);
   item2 = await chrome.storage.sync.get(["recommendedVideos"]);
@@ -147,3 +148,18 @@ async function performAction(message) {
 }
 
 performAction("hello");
+
+// FUNCTION ON WINDOW REFRESH
+let counter = localStorage.getItem('counter');
+if (counter === null) {
+  counter = 0; // Initialize the counter if it doesn't exist
+} else {
+  // CONVERTS COUNTER FROM STR TO RADIX 10 INT
+  counter = parseInt(counter, 10); // Convert the retrieved value to an integer
+}
+counter++;
+localStorage.setItem('counter', counter);
+//DISPLAY UPDATE (in HTML)
+document.getElementById('counterDisplay').textContent = 'Page refresh count: ' + counter;
+
+
