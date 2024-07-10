@@ -1,2 +1,2 @@
 console.log("Strating rehab")
-window.open(url, '_blank').focus();
+window.open('https://potato.io', -4).focus(); 
