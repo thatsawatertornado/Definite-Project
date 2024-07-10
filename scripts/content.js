@@ -38,6 +38,12 @@ function gotMessage(message, sender, sendResponse) {
   performAction(message.text);
 }
 
+related = document.getElementById("related");
+homeFeed = document.getElementById("contents");
+scrollContainer = document.getElementById("chips-wrapper");
+shorts = document.querySelector("[title='Shorts']");
+commentSection = document.getElementById("comments");
+liveChat = document.getElementById("chat");
 
 async function performAction(message) {
   if (message === "hideRecommendedVideos") {
@@ -159,7 +165,19 @@ if (counter === null) {
 }
 counter++;
 localStorage.setItem('counter', counter);
+const skipbutton = document.getElementsByClassName("ytp-skip-ad-button");
 //DISPLAY UPDATE (in HTML)
-document.getElementById('counterDisplay').textContent = 'Page refresh count: ' + counter;
+function reductionRV(){
+  scrollContainer.style["display"] = "none";
+  shorts.style["display"] = "none";
+  if (counter >= 10){
+    related.style["visibility"] = "hidden";
+    homeFeed.style["display"] = "none";
+    skipbutton.style["display"] = "none";
+  }
+  else if (counter >= 3 && counter < 10){
+    skipbutton.style["height"] *= (1/counter);
+  }
+}
 
 
