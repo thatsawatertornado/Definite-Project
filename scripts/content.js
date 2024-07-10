@@ -40,6 +40,7 @@ function gotMessage(message, sender, sendResponse) {
 
 related = document.getElementById("related");
 homeFeed = document.getElementById("contents");
+thumbnail = document.getElementById("thumbnail");
 scrollContainer = document.getElementById("chips-wrapper");
 shorts = document.querySelector("[title='Shorts']");
 commentSection = document.getElementById("comments");
@@ -166,10 +167,12 @@ if (counter === null) {
 counter++;
 localStorage.setItem('counter', counter);
 const skipbutton = document.getElementsByClassName("ytp-skip-ad-button");
+const bigad = document.getElementById("masthead-ad");
 //DISPLAY UPDATE (in HTML)
 function reductionRV(){
   scrollContainer.style["display"] = "none";
   shorts.style["display"] = "none";
+  thumbnail.style["visibility"] = "hidden";
   if (counter >= 10){
     related.style["visibility"] = "hidden";
     homeFeed.style["display"] = "none";
