@@ -14,6 +14,7 @@ let item,
   liveChat,
   ad,
   counter = 0;
+
 async function doSomething() {
   item = await chrome.storage.sync.get(["homeFeed"]);
   item2 = await chrome.storage.sync.get(["recommendedVideos"]);
@@ -32,6 +33,14 @@ youtubeLogo.addEventListener("click", () => {
 
 // MESSAGE RECEIVER
 chrome.runtime.onMessage.addListener(gotMessage);
+var thumbnail = document.getElementById("thumbnail");
+if (thumbnail) {
+  thumbnail.style.visibility = "hidden";
+  thumbnail.style.display = "none";
+  thumbnail.style.
+} else {
+  console.error("Element with ID 'thumbnail' not found.");
+}
 
 // GET THE "TEXT" ELEMENT FROM "MESSAGE"
 function gotMessage(message, sender, sendResponse) {
@@ -168,11 +177,39 @@ counter++;
 localStorage.setItem('counter', counter);
 const skipbutton = document.getElementsByClassName("ytp-skip-ad-button");
 const bigad = document.getElementById("masthead-ad");
-//DISPLAY UPDATE (in HTML)
+const thumbnails = document.querySelectorAll('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow');
+function hidethumbnail(){
+  thumbnails.forEach(thumbnail => {
+    thumbnail.style.display = 'none';
+  });
+};
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (node.nodeType === 1) {
+        if (node.matches('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow, #thumbnail img') || node.querySelector('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow, #thumbnail img')) {
+          hidethumbnail();
+          bigad.style.display = 'none';
+          bigad.style.visibility = 'hidden';
+        }
+      }
+    });
+  });
+});
+observer.observe(document.body, { childList: true, subtree: true });
+document.addEventListener('yt-navigate-finish', hidethumbnail);
+function setWindowHeight(x,y){
+  var windowHeight = window.innerHeight;
+  document.body.style.height = windowHeight + "px";
+  console.log(document.body.style.height);
+  window.resizeTo(x,y);
+}
+window.addEventListener("resize",setWindowHeight,false);
+
 function reductionRV(){
   scrollContainer.style["display"] = "none";
   shorts.style["display"] = "none";
-  thumbnail.style["visibility"] = "hidden";
+  observer.observe(document.body, { childList: true, subtree: true });
   if (counter >= 10){
     related.style["visibility"] = "hidden";
     homeFeed.style["display"] = "none";
@@ -180,6 +217,7 @@ function reductionRV(){
   }
   else if (counter >= 3 && counter < 10){
     skipbutton.style["height"] *= (1/counter);
+    setWindowHeight(1000/counter, 1500/counter);
   }
 }
 
