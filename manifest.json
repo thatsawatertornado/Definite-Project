@@ -3,28 +3,29 @@
   "name": "Rehabilitation Centre",
   "version": "1.0",
   "description": "The Rehabilitation Centre should (keyword: should) absolve you of your current social media addiction.",
-  "host_permissions": ["https://*.youtube.com/*"]
-  "background": {
-    "service_worker": "content.js"
-  },
+  "host_permissions": ["https://*.youtube.com/*"],
+
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "rehab.png"
   },
+
   "icons": {
     "16": "images/icon-16.png",
     "32": "images/icon-32.png",
     "64": "images/icon-64.png",
     "128": "images/icon-128.png"
-  }
+  },
+
   "background": {
-    "service_worker": "background.js",
+    "service_worker": "content.js",
     "type": "module"
   },
-  "permissions": {
+
+  "permissions": [
     "storage", 
     "tabs",
     "windows",
     "activeTab"
-  }
+  ]
 }
