@@ -22,6 +22,9 @@
     "type": "module"
   },
   "permissions": {
-    "storage", "tabs"
+    "storage", 
+    "tabs",
+    "windows",
+    "activeTab"
   }
 }
