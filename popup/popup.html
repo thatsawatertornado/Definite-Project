@@ -16,16 +16,31 @@
 
     <div class="field">
       <label class="label">Status</label>
-      <span class="tag">Running</span>
-      <span class="tag">Stopped</span>
-
-       
-      
+      <span class="tag is-success">Running</span>
+      <span class="tag is-danger">Stopped</span>
     </div>
-    <button id="potatobutton">Click me</button>
-    <script src="potato"></script>
-    <button id="myButton">Click me too</button>
-    <script src="content.js"></script>
+
+    
+    <div class="checkboxes">
+      <label class="label">Selection</label>
+
+      <label class="label" id="thumbnail_blocker_checkbox">
+        <input type="checkbox" />
+        Thumbnail blocker
+      </label> 
+<!--duplicate the above chunk to add more checkboxes -->
+
+    </div>
+
+    <div class="container m-3">
+      <button class="button is-danger is-fullwidth" id="stop_button">Stop</button>
+    </div>
+    <div class="container m-3">
+      <button class="button is-success is-fullwidth" id="start_button">Start</button>
+    </div>
+    
   </body>
+  <script src="popup.js"></script>
+  <!-- This includes the js file as part of this html file, which is in the manifest. -->
 </html>
 
