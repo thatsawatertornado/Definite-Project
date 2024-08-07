@@ -6,8 +6,11 @@ const ThumbnailBlockerElement = document.getElementById("thumbnail_blocker_check
 const StopButton = document.getElementById("stop_button");
 const StartButton = document.getElementById("start_button");
 
-StartButton = function() {
+StartButton.onclick = function() {
     console.log("You clicked the start button!");
+    console.log("ThumbnailBlockerElement is: ", ThumbnailBlockerElement.value);
+    //this doesnt seem to work rn
+ 
 }
 StopButton.onclick = function() {
     console.log("You clicked the stop button!");
