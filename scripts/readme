@@ -1,4 +1,5 @@
-#i contain scripts :D
+1. **content.js**
+    does all the anti-doom scrolling stuff
 
-#We have the main content.js script, which does all the anti-doom scrolling stuff
-#Then we have the rehab.js, which simply provides shit. idk what yet lmAO
+2. **background.js**
+    listens for events like tab switching or button pressing.

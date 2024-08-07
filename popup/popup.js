@@ -1,6 +1,6 @@
 console.log("Strating popup");
 //Checkbox Elements
-const ThumbnailBlockerElement = document.getElementById("thumbnail_blocker_checkbox");
+const RehabSelection = document.getElementById("rehab_selection");
 
 //Button Elements
 const StopButton = document.getElementById("stop_button");

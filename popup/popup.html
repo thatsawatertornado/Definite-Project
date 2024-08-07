@@ -20,17 +20,18 @@
       <span class="tag is-danger">Stopped</span>
     </div>
 
-    
-    <div class="checkboxes">
-      <label class="label">Selection</label>
-
-      <label class="label" >
-        <input type="checkbox" id="thumbnail_blocker_checkbox" />
-        Thumbnail blocker
-      </label> 
-<!--duplicate the above chunk to add more checkboxes -->
-
+    <div class="field">
+      <label class="label">Rehab Selection</label>
+      <div class="select is-multiple" >
+        <select multiple size="8" id="rehab_selection">
+          <option value="thumbnail_blocker">Thumbnail blocker</option>
+          <option value="Bolivia">Bolivia</option>
+          <!--duplicate the above chunk to add more checkboxes -->
+        </select>
+      </div>
     </div>
+
+    
 
     <div class="container m-3">
       <button class="button is-danger is-fullwidth" id="stop_button">Stop</button>
