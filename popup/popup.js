@@ -8,7 +8,7 @@ const StartButton = document.getElementById("start_button");
 
 StartButton.onclick = function() {
     console.log("You clicked the start button!");
-    console.log("ThumbnailBlockerElement is: ", RehabSelection.value);
+    console.log("Rehab is in progress for: ", RehabSelection.value);
     //this doesnt seem to work rn
  
 }
