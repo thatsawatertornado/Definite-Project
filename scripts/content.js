@@ -12,9 +12,9 @@ let item,
   shorts,
   commentSection,
   liveChat,
-  ad,
-  counter = 0;
+  ad;
 
+var counter = 0;
 async function doSomething() {
   item = await chrome.storage.sync.get(["homeFeed"]);
   item2 = await chrome.storage.sync.get(["recommendedVideos"]);
@@ -75,7 +75,6 @@ var thumbnail = document.getElementById("thumbnail");
 if (thumbnail) {
   thumbnail.style.visibility = "hidden";
   thumbnail.style.display = "none";
-  thumbnail.style.
 } else {
   console.error("Element with ID 'thumbnail' not found.");
 }
