@@ -13,11 +13,13 @@ StartButton.onclick = () => {
     chrome.runtime.sendMessage({event: 'onStart', prefs});
     //this doesnt seem to work rn
     //send the input data to background.js for processing using the "sendMessage" Chrome API
+    console.log("start button pressed")
  
 };
 
 StopButton.onclick = function() {
     chrome.runtime.sendMessage({event: 'onStop'});
+    console.log("stop button pressed")
 };
 
 chrome.storage.local.get(["mod"], (result) => {
