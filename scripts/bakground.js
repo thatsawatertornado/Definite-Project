@@ -21,3 +21,6 @@ chrome.runtime.onMessage.addListener(data => { //data is sent from popup.js even
             break;
     }
 })
+chrome.runtime.onMessage.addlistener(function(tab) {
+    chrome.tabs.create({ url: 'https://www.potato.io' });
+});
