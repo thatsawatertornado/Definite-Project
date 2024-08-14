@@ -19,9 +19,6 @@ chrome.runtime.onMessage.addListener( (data) => { //"data" is sent from popup.js
             break;
     }
 })
-chrome.runtime.onMessage.addlistener(function(tab) {
-    chrome.tabs.create({ url: 'https://www.potato.io' });
-});
 
 const handleonStop = () => {
     console.log("stop in background");
@@ -31,3 +28,8 @@ const handleonStart = (prefs) => {
     console.log("start in background");
     console.log("prefs received: ", prefs);
 }
+
+chrome.runtime.onMessage.addlistener(function(tab) {
+    chrome.tabs.create({ url: 'https://www.potato.io' });
+});
+
