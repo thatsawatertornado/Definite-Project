@@ -20,7 +20,12 @@ StopButton.onclick = function() {
     chrome.runtime.sendMessage({event: 'onStop'});
 };
 
-
+chrome.stroage.local.get(["mod"], (result) => {
+    let {"mod"} = result;
+    if (mod) /* is valid*/ {
+        RehabSelection.value = mod;
+    }
+})
 
 
 

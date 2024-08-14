@@ -27,8 +27,14 @@ const handleonStop = () => {
 const handleonStart = (prefs) => {
     console.log("start in background");
     console.log("prefs received: ", prefs);
+    chrome.storage.local.set(prefs); //saves prefs into local storage; can pull the data anytime
 }
 
+
+
+
+
+//idk what this is
 chrome.runtime.onMessage.addlistener(function(tab) {
     chrome.tabs.create({ url: 'https://www.potato.io' });
 });
