@@ -11,6 +11,7 @@ chrome.runtime.onInstalled.addListener(details => {
     console.log("onInstalled reason: ", details.reason);
 }
 )
+
 //message listener
 chrome.runtime.onMessage.addListener( (data) => { //"data" is sent from popup.js events. This is a fat arrow function
     let {event, prefs} = data;
