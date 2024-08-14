@@ -8,14 +8,15 @@
 //message listener
 chrome.runtime.onMessage.addListener(data => { //data is sent from popup.js events
     switch (data.event) {
+        case 'onStop':
+            console.log("stop in background");
+            break;
         case 'onStart':
             console.log("start in background");
             console.log("prefs received: ", data.prefs);
             break;
 
-        case 'onStop':
-            console.log("stop in background");
-            break;
+
         default:
             break;
     }

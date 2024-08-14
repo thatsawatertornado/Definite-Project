@@ -6,7 +6,7 @@ const RehabSelection = document.getElementById("rehab_selection");
 const StopButton = document.getElementById("stop_button");
 const StartButton = document.getElementById("start_button");
 
-StartButton.onclick = function() {
+StartButton.onclick = () => {
     const prefs = {
         mod: RehabSelection.value
     };

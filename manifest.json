@@ -18,7 +18,7 @@
   },
 
   "background": {
-    "service_worker": "bakground.js",
+    "service_worker": "scripts/bakground.js",
     "type": "module"
   },
 
