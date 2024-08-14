@@ -1,6 +1,6 @@
 //example of what data object looks like
 /* let data = {
-    "event": "thumbnail_blocker, Bolivia, etc"
+    "event": "onstart/onstop"
     "prefs": {
     "banana": "banana"
     }
@@ -10,8 +10,12 @@ chrome.runtime.onMessage.addListener(data => { //data is sent from popup.js even
     switch (data.event) {
         case 'onStart':
             console.log("start in background");
+            console.log("prefs received: ", data.prefs);
+            break;
+
         case 'onStop':
-            console.log("start in background");
+            console.log("stop in background");
+            break;
         default:
             break;
     }
