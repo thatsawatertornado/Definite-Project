@@ -21,7 +21,7 @@ StopButton.onclick = function() {
 };
 
 chrome.stroage.local.get(["mod"], (result) => {
-    let {"mod"} = result;
+    let {mod} = result;
     if (mod) /* is valid*/ {
         RehabSelection.value = mod;
     }
