@@ -211,7 +211,7 @@ performAction("hello");
 
 // FUNCTION ON WINDOW REFRESH
 chrome.storage.local.set(counter);
-let counter = chrome.storage.local.get(counter);
+counter = chrome.storage.local.get(counter);
 if (counter === null) {
   counter = 0; // Initialize the counter if it doesn't exist
 } else {
