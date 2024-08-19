@@ -14,6 +14,7 @@ let item,
   liveChat,
   ad;
 
+
 var counter = 0;
 async function doSomething() {
   item = await chrome.storage.sync.get(["homeFeed"]);
