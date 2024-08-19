@@ -1,0 +1,22 @@
+{
+  "name": "rehab",
+  "version": "1.0.0",
+  "description": "rehab!!",
+  "main": "content.mjs",
+  "scripts": {
+    "start:content": "node content.mjs",
+    "start:popup": "node popup.mjs",
+    "start:background": "node background.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "license": "UNLICENSED",
+  "author": "me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thatsawatertornado/Definite-Project.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
