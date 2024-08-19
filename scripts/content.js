@@ -12,9 +12,15 @@ let item,
   shorts,
   commentSection,
   liveChat,
-  ad;
+  ad,
+  ammo;
 
-
+chrome.storage.local.get(["mod"], (result) => {
+    let {mod} = result;
+    if (mod) {
+        ammo = mod;
+    }
+});
 var counter = 0;
 async function doSomething() {
   item = await chrome.storage.sync.get(["homeFeed"]);
@@ -217,23 +223,22 @@ const skipbutton = document.getElementsByClassName("ytp-skip-ad-button");
 const bigad = document.getElementById("masthead-ad");
 const thumbnails = document.querySelectorAll('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow');
 function hidethumbnail(){
-  thumbnails.forEach(thumbnail => {
-    thumbnail.style.display = 'none';
-  });
-};
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach(mutation => {
-    mutation.addedNodes.forEach(node => {
-      if (node.nodeType === 1) {
-        if (node.matches('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow, #thumbnail img') || node.querySelector('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow, #thumbnail img')) {
-          hidethumbnail();
-          bigad.style.display = 'none';
-          bigad.style.visibility = 'hidden';
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(mutation => {
+      mutation.addedNodes.forEach(node => {
+        if (node.nodeType === 1) {
+          if (node.matches('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow, #thumbnail img') || node.querySelector('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow, #thumbnail img')) {
+            thumbnails.forEach(thumbnail => {
+              thumbnail.style.display = 'none';
+            });
+            bigad.style.display = 'none';
+            bigad.style.visibility = 'hidden';
+          }
         }
-      }
+      });
     });
   });
-});
+};
 observer.observe(document.body, { childList: true, subtree: true });
 document.addEventListener('yt-navigate-finish', hidethumbnail);
 function setWindowHeight(x,y){
@@ -256,6 +261,9 @@ function reductionRV(){
   else if (counter >= 3 && counter < 10){
     skipbutton.style["height"] *= (1/counter);
     setWindowHeight(1000/counter, 1500/counter);
+  }
+  if(ammo === "thumbnail_blocker"){
+    hidethumbnail();
   }
 }
 
