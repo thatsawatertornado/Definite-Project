@@ -29,7 +29,7 @@ chrome.storage.local.get(["mod"], (result) => {
     }
 })
 
-// chrome.stroage.local.remove(keys: )
+
 
 
 

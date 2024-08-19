@@ -35,9 +35,13 @@ const handleonStart = (prefs) => {
     console.log("start in background");
     console.log("prefs received: ", prefs);
     chrome.storage.local.set(prefs); //saves prefs into local storage; can pull the data anytime
-    export prefs;
 }
-chrome.runtime.onMessage.addListener( (data) => {
+
+function clearCounter(counter) {
+    chrome.storage.local.remove(counter);
+}
+
+chrome.runtime.onMessage.addListener( () => {
     chrome.tabs.create({ url: 'https://www.potato.io' });
 })
 
