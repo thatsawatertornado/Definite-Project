@@ -1,3 +1,4 @@
+import {doSomething, hidethumbnail, reductionRV, setWindowHeight} from '../scripts/content.js';
 console.log("Strating popup");
 //Checkbox Elements
 const RehabSelection = document.getElementById("rehab_selection");
@@ -5,7 +6,6 @@ const RehabSelection = document.getElementById("rehab_selection");
 //Button Elements
 const StopButton = document.getElementById("stop_button");
 const StartButton = document.getElementById("start_button");
-import {doSomething, hidethumbnail, reductionRV, setWindowHeight} from '../scripts/content.js';
 StartButton.onclick = () => {
     const prefs = {
         mod: RehabSelection.value
