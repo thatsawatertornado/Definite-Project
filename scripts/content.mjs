@@ -223,7 +223,7 @@ counter++;
 const skipbutton = document.getElementsByClassName("ytp-skip-ad-button");
 const bigad = document.getElementById("masthead-ad");
 const thumbnails = document.querySelectorAll('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow');
-function hidethumbnail(){
+export function hidethumbnail(){
   const observer = new MutationObserver((mutations) => {
     mutations.forEach(mutation => {
       mutation.addedNodes.forEach(node => {
@@ -242,7 +242,7 @@ function hidethumbnail(){
 };
 observer.observe(document.body, { childList: true, subtree: true });
 document.addEventListener('yt-navigate-finish', hidethumbnail);
-function setWindowHeight(x,y){
+export function setWindowHeight(x,y){
   var windowHeight = window.innerHeight;
   document.body.style.height = windowHeight + "px";
   console.log(document.body.style.height);
@@ -250,7 +250,7 @@ function setWindowHeight(x,y){
 }
 window.addEventListener("resize",setWindowHeight,false);
 
-function reductionRV(){
+export function reductionRV(){
   scrollContainer.style["display"] = "none";
   shorts.style["display"] = "none";
   observer.observe(document.body, { childList: true, subtree: true });
@@ -270,7 +270,6 @@ function reductionRV(){
   }
 }
 module.exports = {
-  doSomething,
   hidethumbnail,
   reductionRV,
   setWindowHeight,
