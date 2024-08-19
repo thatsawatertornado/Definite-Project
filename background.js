@@ -28,7 +28,9 @@ chrome.runtime.onMessage.addListener( (data) => { //"data" is sent from popup.js
 })
 
 const handleonStop = () => {
-    console.log("stop in background");
+    console.log("stopping in background...");
+    
+    
 }
 
 const handleonStart = (prefs) => {
