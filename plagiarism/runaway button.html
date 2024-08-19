@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Runaway Button</title>
+    <style>
+        #runaway-btn {
+            position: absolute;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <select id="action-select">
+        <option value="none">Select an action</option>
+        <option value="runaway-button">Runaway Button</option>
+    </select>
+    <button id='runaway-btn'>Click Me &#129315;</button>
+
+    <div id="button-container"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+
