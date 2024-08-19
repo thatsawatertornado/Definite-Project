@@ -38,11 +38,3 @@ const handleonStart = (prefs) => {
 }
 
 
-
-
-
-//idk what this is
-chrome.runtime.onMessage.addlistener(function(tab) {
-    chrome.tabs.create({ url: 'https://www.potato.io' });
-});
-
