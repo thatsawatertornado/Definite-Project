@@ -22,53 +22,6 @@ chrome.storage.local.get(["mod"], (result) => {
     }
 });
 var counter = 0;
-async function doSomething() {
-  item = await chrome.storage.sync.get(["homeFeed"]);
-  item2 = await chrome.storage.sync.get(["recommendedVideos"]);
-  item3 = await chrome.storage.sync.get(["shorts"]);
-  item4 = await chrome.storage.sync.get(["commentSection"]);
-  item5 = await chrome.storage.sync.get(["liveChat"]);
-  item6 = await chrome.storage.sync.get(["ad"]);
-}
-doSomething();
-
-const jslint = require('jslint');
- 
-// Get the JavaScript file to analyze
-const file = 'path_to_your_javascript_file.js';
- 
-// Read the JavaScript file
-const fs = require('fs');
-const code = fs.readFileSync(file, 'utf8');
- 
-// Analyze the JavaScript code
-const result = jslint(code, {
-  browser: true,
-  node: true,
-  es6: true,
-  vars: true,
-  plusplus: true,
-  bitwise: true,
-  regexp: true,
-  strict: true,
-  white: true,
-  undef: true,
-  unused: true,
-  debug: true,
-  evil: true,
-  nomen: true,
-  on: true,
-});
- 
-// Print any errors or warnings
-if (result.errors.length > 0) {
-  console.log(`Errors found in ${file}:`);
-  result.errors.forEach((error) => {
-    console.log(`  Line ${error.line}: ${error.reason}`);
-  });
-} else {
-  console.log(`No errors found in ${file}`);
-}
 
 // EVENT LISTENER
 youtubeLogo = document.getElementById("logo-icon");
