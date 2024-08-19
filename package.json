@@ -4,8 +4,8 @@
   "description": "rehab!!",
   "main": "content.mjs",
   "scripts": {
-    "start:content": "node content.mjs",
-    "start:popup": "node popup.mjs",
+    "start:content": "node ./scripts/content.mjs",
+    "start:popup": "node ./popup/popup.mjs",
     "start:background": "node background.js"
   },
   "dependencies": {},

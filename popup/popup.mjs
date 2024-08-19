@@ -1,4 +1,4 @@
-import {doSomething, hidethumbnail, reductionRV, setWindowHeight} from '../scripts/content.js';
+import {doSomething, hidethumbnail, reductionRV, setWindowHeight} from '../scripts/content.mjs';
 console.log("Strating popup");
 //Checkbox Elements
 const RehabSelection = document.getElementById("rehab_selection");
