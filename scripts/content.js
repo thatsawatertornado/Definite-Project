@@ -262,11 +262,18 @@ function reductionRV(){
   }
   else if (counter >= 3 && counter < 10){
     skipbutton.style["height"] *= (1/counter);
-    setWindowHeight(1000/counter, 1500/counter);
   }
   if(ammo === "thumbnail_blocker"){
     hidethumbnail();
   }
+  if(ammo === "thumbnail_blocker"){
+    setWindowHeight(1000/counter, 1500/counter);
+  }
 }
-
+module.exports = {
+  doSomething,
+  hidethumbnail,
+  reductionRV,
+  setWindowHeight,
+};
 
