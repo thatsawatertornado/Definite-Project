@@ -210,7 +210,9 @@ async function performAction(message) {
 performAction("hello");
 
 // FUNCTION ON WINDOW REFRESH
-let counter = localStorage.getItem('counter');
+let counter = 0;
+chrome.storage.local.set(counter);
+let counter = chrome.storage.local.get(counter);
 if (counter === null) {
   counter = 0; // Initialize the counter if it doesn't exist
 } else {
@@ -218,7 +220,7 @@ if (counter === null) {
   counter = parseInt(counter, 10); // Convert the retrieved value to an integer
 }
 counter++;
-localStorage.setItem('counter', counter);
+
 const skipbutton = document.getElementsByClassName("ytp-skip-ad-button");
 const bigad = document.getElementById("masthead-ad");
 const thumbnails = document.querySelectorAll('ytd-thumbnail, ytd-rich-item-renderer ytd-thumbnail, yt-img-shadow');
