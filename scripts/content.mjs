@@ -210,7 +210,6 @@ async function performAction(message) {
 performAction("hello");
 
 // FUNCTION ON WINDOW REFRESH
-let counter = 0;
 chrome.storage.local.set(counter);
 let counter = chrome.storage.local.get(counter);
 if (counter === null) {
